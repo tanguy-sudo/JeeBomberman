@@ -24,7 +24,6 @@ public final class SignInForm {
 		try {
 			user = userDao.find(username, password);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

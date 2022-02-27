@@ -50,6 +50,10 @@ public class SignInServlet extends HttpServlet {
 
 		if(user != null) {
 			this.getServletContext().getRequestDispatcher("/WEB-INF/Accueil.jsp").forward(request, response);					
+		} else {
+			Boolean errorConnect = true;
+			request.setAttribute("errorConnect", errorConnect);
+			this.getServletContext().getRequestDispatcher("/WEB-INF/SignIn.jsp").forward(request, response);	
 		}
 		
 	}

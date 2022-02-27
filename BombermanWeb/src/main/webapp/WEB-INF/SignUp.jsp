@@ -42,6 +42,12 @@
 	
 	              <button class="btn btn-outline-light btn-lg px-5" type="submit">Sign Up</button>
               </form>
+              
+             	<c:if test="${ errorConnect }">
+		            <div>
+		              <p class="mb-0 text-danger">Incorrect username or password</p>
+		            </div>
+	            </c:if>
 
               <div class="d-flex justify-content-center text-center mt-4 pt-1">
                 <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>

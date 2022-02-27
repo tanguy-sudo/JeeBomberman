@@ -32,6 +32,12 @@
 	              <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
               </form>
 
+	            <c:if test="${ errorConnect }">
+		            <div>
+		              <p class="mb-0 text-danger">Incorrect username or password</p>
+		            </div>
+	            </c:if>
+            
               <div class="d-flex justify-content-center text-center mt-4 pt-1">
                 <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
                 <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
@@ -41,7 +47,7 @@
             </div>
 
             <div>
-              <p class="mb-0">Don't have an account? <a href="${pageContext.request.contextPath}/SignUp" class="text-blue-50 fw-bold">Sign Up</a></p>
+              <p class="mb-0">Don't have an account ? <a href="${pageContext.request.contextPath}/SignUp" class="text-blue-50 fw-bold">Sign Up</a></p>
             </div>
 
           </div>

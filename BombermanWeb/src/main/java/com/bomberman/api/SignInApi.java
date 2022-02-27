@@ -7,6 +7,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import com.bomberman.beans.User;
+import com.bomberman.forms.SignInForm;
+
 /**
  * Servlet implementation class SignInApi
  */
@@ -24,13 +27,15 @@ public class SignInApi extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        System.out.println("--------------------------------");
-        System.out.println(username + " : " + password);
+		SignInForm form = new SignInForm();
+		
+		User user = form.connectUser(request);
 
         PrintWriter output = new PrintWriter(response.getOutputStream(), true);
-        output.println("success");
+        
+        if(user != null) {         
+            output.println("success");	
+        }
 		
 	}
 
