@@ -45,4 +45,14 @@
     <servlet-name>SignOutServlet</servlet-name>
     <url-pattern>/SignOut</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SignInApi</display-name>
+    <servlet-name>SignInApi</servlet-name>
+    <servlet-class>com.bomberman.api.SignInApi</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SignInApi</servlet-name>
+    <url-pattern>/SignInApi</url-pattern>
+  </servlet-mapping>
 </web-app>
