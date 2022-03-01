@@ -4,7 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+import java.util.Base64;
+import java.security.MessageDigest;
+import java.nio.charset.StandardCharsets;
 import com.bomberman.beans.User;
 
 public class UserDaoImpl implements UserDao {
@@ -27,7 +29,7 @@ public class UserDaoImpl implements UserDao {
 	        
 	        preparedStatement = connexion.prepareStatement("SELECT id, username, password FROM user WHERE username = ? AND password = ? ");
 	        preparedStatement.setString(1, username);
-	        preparedStatement.setString(2, password);
+	        preparedStatement.setString(2, encrypt(password));
 	        
 	        resultSet = preparedStatement.executeQuery();
 	        
@@ -55,15 +57,14 @@ public class UserDaoImpl implements UserDao {
 		
 		String username = user.getUsername();
 		String password = user.getPassword();
-		
-		
+			
 		try 
-		{	
+		{		        
 			connexion = daoFactory.getConnection();
 			
 	        preparedStatement = connexion.prepareStatement("INSERT INTO user(username, password) VALUE(?,?)");
 	        preparedStatement.setString(1, username);
-	        preparedStatement.setString(2, password);
+	        preparedStatement.setString(2, encrypt(password));
 	        
 			int statut = preparedStatement.executeUpdate();
 			
@@ -87,5 +88,11 @@ public class UserDaoImpl implements UserDao {
 			  connexion.close();
 		}
 	}
-
+    
+    private String encrypt(String data) throws Exception{
+    	  MessageDigest digest = MessageDigest.getInstance("SHA-256");
+          byte[] hash = digest.digest(data.getBytes(StandardCharsets.UTF_8));	    
+    	  return Base64.getEncoder().encodeToString(hash);
+    }
+    
 }

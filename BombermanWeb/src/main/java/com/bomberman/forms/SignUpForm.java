@@ -14,9 +14,14 @@ public final class SignUpForm {
         String password = request.getParameter("password");
         String verifpassword = request.getParameter("verifpassword");
         
-        if(username == null || password == null || (username != verifpassword)) {
+        if(username == null || password == null) {
         	return null;
         }
+        
+        if(!password.equals(verifpassword)) {
+        	return null;
+        }
+        
         
         User user = new User();
 
