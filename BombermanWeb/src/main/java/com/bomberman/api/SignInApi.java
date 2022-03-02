@@ -46,9 +46,11 @@ public class SignInApi extends HttpServlet {
         
         PrintWriter output = new PrintWriter(response.getOutputStream(), true);
         if(user != null) { 
-            output.println("success");	
+        	System.out.println("success");	
+            output.println("{ status : 201 }");	
         } else {
-            output.println("error");	
+         	System.out.println("error");	
+            output.println("{ status : 404 }");	
         }
 	}
 
