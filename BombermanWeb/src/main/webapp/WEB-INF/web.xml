@@ -52,12 +52,12 @@
 	</servlet-mapping>
 	<servlet>
 		<description></description>
-		<display-name>SignInApi</display-name>
-		<servlet-name>SignInApi</servlet-name>
-		<servlet-class>com.bomberman.api.SignInApi</servlet-class>
+		<display-name>UserController</display-name>
+		<servlet-name>UserController</servlet-name>
+		<servlet-class>com.bomberman.api.UserController</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>SignInApi</servlet-name>
-		<url-pattern>/SignInApi</url-pattern>
+		<servlet-name>UserController</servlet-name>
+		<url-pattern>/api/user</url-pattern>
 	</servlet-mapping>
 </web-app>

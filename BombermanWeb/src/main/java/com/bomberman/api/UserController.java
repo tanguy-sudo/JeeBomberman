@@ -14,13 +14,13 @@ import com.bomberman.forms.SignInApiForm;
 /**
  * Servlet implementation class SignInApi
  */
-public class SignInApi extends HttpServlet {
+public class UserController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SignInApi() {
+    public UserController() {
         super();
     }
 
@@ -28,7 +28,7 @@ public class SignInApi extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO
+		System.out.print("mqsregfhuiesrhiukdhiroufgehirofhedi");
 	}
 
 	/**
