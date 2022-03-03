@@ -1,4 +1,4 @@
-package com.bomberman.forms;
+package com.bomberman.api.forms;
 
 import com.bomberman.beans.User;
 import com.bomberman.dao.DAOFactory;

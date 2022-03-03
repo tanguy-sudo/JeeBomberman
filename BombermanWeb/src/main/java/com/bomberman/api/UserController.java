@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import org.json.JSONObject;
 import com.bomberman.beans.User;
-import com.bomberman.forms.SignInApiForm;
+import com.bomberman.api.forms.SignInApiForm;
 
 /**
  * Servlet implementation class SignInApi
