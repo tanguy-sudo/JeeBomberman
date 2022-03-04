@@ -27,7 +27,7 @@ public class UserDaoImpl implements UserDao {
 	    try {
 	        connexion = daoFactory.getConnection();
 	        
-	        preparedStatement = connexion.prepareStatement("SELECT id, username, password FROM user WHERE username = ? AND password = ? ");
+	        preparedStatement = connexion.prepareStatement("SELECT id, username, password, couleur_agent FROM user WHERE username = ? AND password = ? ");
 	        preparedStatement.setString(1, username);
 	        preparedStatement.setString(2, encrypt(password));
 	        
@@ -38,6 +38,7 @@ public class UserDaoImpl implements UserDao {
 	        	user.setId(resultSet.getInt("id"));
 	        	user.setUsername(resultSet.getString("username"));
 	        	user.setPassword(resultSet.getString("password"));
+	        	user.setCouleur_agent(resultSet.getString("couleur_agent"));
 	        }
 	        
 	    } catch (SQLException e) {

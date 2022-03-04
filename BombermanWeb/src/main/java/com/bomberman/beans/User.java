@@ -5,6 +5,7 @@ public class User {
 	private int id;
 	private String username;
 	private String password;
+	private String couleur_agent;
 	
 	public User() {
 		
@@ -37,6 +38,14 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getCouleur_agent() {
+		return couleur_agent;
+	}
+
+	public void setCouleur_agent(String couleur_agent) {
+		this.couleur_agent = couleur_agent;
 	}
 
 }

@@ -28,7 +28,6 @@ public class UserController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.print("mqsregfhuiesrhiukdhiroufgehirofhedi");
 	}
 
 	/**
@@ -47,7 +46,7 @@ public class UserController extends HttpServlet {
         PrintWriter output = new PrintWriter(response.getOutputStream(), true);
         if(user != null) { 
         	System.out.println("success");	
-            output.println("{ status : 201 }");	
+            output.println("{ status : 201, couleur_agent : " + user.getCouleur_agent() + " }");	
         } else {
          	System.out.println("error");	
             output.println("{ status : 404 }");	
