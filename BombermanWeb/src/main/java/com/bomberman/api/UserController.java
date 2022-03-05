@@ -9,39 +9,25 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import org.json.JSONObject;
 import com.bomberman.beans.User;
-import com.bomberman.api.forms.SignInApiForm;
+import com.bomberman.api.services.UserService;
 
-/**
- * Servlet implementation class SignInApi
- */
 public class UserController extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public UserController() {
         super();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         BufferedReader reader = request.getReader();
         JSONObject json = new JSONObject(reader.readLine());
         
-        String username = json.getString("username");
-        String password = json.getString("password");
-        
-        SignInApiForm form = new SignInApiForm(username, password);		
-		User user = form.connectUser(request);
+        UserService userService = new UserService();		
+		User user = userService.connectUser(json);
         
         PrintWriter output = new PrintWriter(response.getOutputStream(), true);
         if(user != null) { 

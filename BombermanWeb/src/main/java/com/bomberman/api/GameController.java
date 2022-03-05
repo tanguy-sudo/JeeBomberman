@@ -5,35 +5,33 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
+import com.bomberman.api.services.GameService;
+import com.bomberman.beans.Game;
 
-/**
- * Servlet implementation class GameController
- */
 public class GameController extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public GameController() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {      
+        GameService gameService = new GameService();		
+		Game game = gameService.createGame();
+        
+        PrintWriter output = new PrintWriter(response.getOutputStream(), true);
+        if(game != null) { 
+        	System.out.println("success");	
+            output.println("{ status : 201 }");	
+        } else {
+         	System.out.println("error");	
+            output.println("{ status : 404 }");	
+        }
 	}
 
 }

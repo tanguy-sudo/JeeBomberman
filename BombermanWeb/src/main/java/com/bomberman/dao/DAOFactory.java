@@ -48,5 +48,15 @@ public class DAOFactory {
     {
     	return new UserDaoImpl(this);
     }
+    
+    public GameDao getGameDao()
+    {
+    	return new GameDaoImpl(this);
+    }
+    
+    public PlayDao getPlayDao()
+    {
+    	return new PlayDaoImpl(this);
+    }
 
 }

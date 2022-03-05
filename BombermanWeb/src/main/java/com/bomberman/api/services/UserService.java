@@ -1,23 +1,23 @@
-package com.bomberman.api.forms;
+package com.bomberman.api.services;
+
+import org.json.JSONObject;
 
 import com.bomberman.beans.User;
 import com.bomberman.dao.DAOFactory;
 import com.bomberman.dao.UserDao;
 
-import jakarta.servlet.http.HttpServletRequest;
-
-public class SignInApiForm {
-    private String username;
-    private String password;
+public class UserService {
 	
-	public SignInApiForm(String u, String p) {
-		this.username = u;
-		this.password = p;
+	public UserService() {
+		
 	}
 	
-    public User connectUser( HttpServletRequest request ) {   	
+    public User connectUser(JSONObject json) {  
+    	
+        String username = json.getString("username");
+        String password = json.getString("password");
         
-        if(this.username == null || this.password == null) {
+        if(username == null || password == null) {
         	return null;
         }
         
@@ -26,7 +26,7 @@ public class SignInApiForm {
         
         User user = null;
 		try {
-			user = userDao.find(this.username, this.password);
+			user = userDao.find(username, password);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

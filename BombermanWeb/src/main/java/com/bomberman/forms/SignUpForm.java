@@ -34,7 +34,6 @@ public final class SignUpForm {
     	try {
 			userDao.create(user);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     	

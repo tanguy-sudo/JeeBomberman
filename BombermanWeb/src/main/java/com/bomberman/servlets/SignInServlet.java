@@ -11,22 +11,14 @@ import java.io.IOException;
 import com.bomberman.beans.User;
 import com.bomberman.forms.SignInForm;
 
-/**
- * Servlet implementation class SignInServlet
- */
 public class SignInServlet extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public SignInServlet() {
         super();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("userSession");
@@ -37,9 +29,6 @@ public class SignInServlet extends HttpServlet {
 		}
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		SignInForm form = new SignInForm();
 		
@@ -54,8 +43,7 @@ public class SignInServlet extends HttpServlet {
 			Boolean errorConnect = true;
 			request.setAttribute("errorConnect", errorConnect);
 			this.getServletContext().getRequestDispatcher("/WEB-INF/SignIn.jsp").forward(request, response);	
-		}
-		
+		}		
 	}
 
 }
