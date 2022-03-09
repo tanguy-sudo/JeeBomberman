@@ -3,6 +3,7 @@ package com.bomberman.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.sql.Timestamp;
 
 import com.bomberman.beans.Game;
@@ -27,7 +28,7 @@ public class GameDaoImpl implements GameDao{
 		{		        
 			connexion = daoFactory.getConnection();
 			
-	        preparedStatement = connexion.prepareStatement("INSERT INTO game(date) VALUE(?)");
+	        preparedStatement = connexion.prepareStatement("INSERT INTO game(date) VALUE(?)",  Statement.RETURN_GENERATED_KEYS);
 	        preparedStatement.setTimestamp(1, date);
 	        
 			int statut = preparedStatement.executeUpdate();

@@ -75,4 +75,14 @@
     <servlet-name>GameController</servlet-name>
     <url-pattern>/api/game</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StoreServlet</display-name>
+    <servlet-name>StoreServlet</servlet-name>
+    <servlet-class>com.bomberman.servlets.StoreServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StoreServlet</servlet-name>
+    <url-pattern>/Store</url-pattern>
+  </servlet-mapping>
 </web-app>

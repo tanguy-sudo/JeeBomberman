@@ -22,3 +22,4 @@
 hs_err_pid*
 /build/
 apache-tomcat-10.0.13/*
+/BombermanWeb/bin/*

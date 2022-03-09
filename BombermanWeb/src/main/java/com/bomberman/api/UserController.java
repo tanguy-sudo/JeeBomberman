@@ -31,7 +31,7 @@ public class UserController extends HttpServlet {
         
         PrintWriter output = new PrintWriter(response.getOutputStream(), true);
         if(user != null) { 
-        	System.out.println("success");	
+        	System.out.println("success, user connected");	
             output.println("{ status : 201, couleur_agent : " + user.getCouleur_agent() + " }");	
         } else {
          	System.out.println("error");	

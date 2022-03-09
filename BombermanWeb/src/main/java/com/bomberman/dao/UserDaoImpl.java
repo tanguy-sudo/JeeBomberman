@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Base64;
 import java.security.MessageDigest;
 import java.nio.charset.StandardCharsets;
@@ -27,7 +28,7 @@ public class UserDaoImpl implements UserDao {
 	    try {
 	        connexion = daoFactory.getConnection();
 	        
-	        preparedStatement = connexion.prepareStatement("SELECT id, username, password, couleur_agent FROM user WHERE username = ? AND password = ? ");
+	        preparedStatement = connexion.prepareStatement("SELECT id, username, password, couleur_agent FROM user WHERE username = ? AND password = ? ", Statement.RETURN_GENERATED_KEYS);
 	        preparedStatement.setString(1, username);
 	        preparedStatement.setString(2, encrypt(password));
 	        

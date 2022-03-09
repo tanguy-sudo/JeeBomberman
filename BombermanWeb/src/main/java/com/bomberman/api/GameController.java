@@ -26,8 +26,8 @@ public class GameController extends HttpServlet {
         
         PrintWriter output = new PrintWriter(response.getOutputStream(), true);
         if(game != null) { 
-        	System.out.println("success");	
-            output.println("{ status : 201 }");	
+        	System.out.println("success, game added");	
+            output.println("{ status : 201, id_game : " + game.getId() + " }");	
         } else {
          	System.out.println("error");	
             output.println("{ status : 404 }");	

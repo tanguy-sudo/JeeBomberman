@@ -10,9 +10,7 @@
 		id="navbarNav">
 		<ul class="navbar-nav">
 			<a class="navbar-brand" href="${pageContext.request.contextPath}">Accueil</a>
-			<li class="nav-item active"><a class="nav-link"
-				href="${pageContext.request.contextPath}/Store">Store <span
-					class="sr-only"></span></a></li>
+			<li class="nav-item active"><a class="nav-link" href="${pageContext.request.contextPath}/Store">Store <span class="sr-only"></span></a></li>
 		</ul>
 	</div>
 	<div class="navbar-nav ms-auto">

@@ -3,6 +3,7 @@ package com.bomberman.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 
 import com.bomberman.beans.Play;
 
@@ -28,7 +29,7 @@ public class PlayDaoImpl implements PlayDao{
 		{		        
 			connexion = daoFactory.getConnection();
 			
-	        preparedStatement = connexion.prepareStatement("INSERT INTO play(results, id_game, id_user) VALUE(?,?,?)");
+	        preparedStatement = connexion.prepareStatement("INSERT INTO play(results, id_game, id_user) VALUE(?,?,?)", Statement.RETURN_GENERATED_KEYS);
 	        preparedStatement.setString(1, results);
 	        preparedStatement.setInt(2, id_game);
 	        preparedStatement.setInt(3, id_user);
