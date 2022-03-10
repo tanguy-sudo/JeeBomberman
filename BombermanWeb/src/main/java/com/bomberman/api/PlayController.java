@@ -8,7 +8,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import org.json.JSONObject;
-import com.bomberman.api.services.PlayService;
+import com.bomberman.services.PlayService;
 import com.bomberman.beans.Play;
 
 

@@ -4,10 +4,9 @@
 <html>
 <head>
 <%@ include file="En-tete.jsp"%>
-<title>Accueil</title>
+<title>Home</title>
 </head>
 <body>
 	<%@ include file="Navbar.jsp"%>
-
 </body>
 </html>

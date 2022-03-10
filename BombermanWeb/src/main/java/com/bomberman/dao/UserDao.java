@@ -7,5 +7,7 @@ public interface UserDao {
 	User find (String username,String password) throws Exception;
 	
 	void create(User user) throws Exception;
+	
+	void updateColorAgent(User user, String color) throws Exception;
 
 }

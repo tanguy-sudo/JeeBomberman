@@ -59,14 +59,16 @@ public class UserDaoImpl implements UserDao {
 		
 		String username = user.getUsername();
 		String password = user.getPassword();
+		String color_agent = user.getCouleur_agent();
 			
 		try 
 		{		        
 			connexion = daoFactory.getConnection();
 			
-	        preparedStatement = connexion.prepareStatement("INSERT INTO user(username, password) VALUE(?,?)");
+	        preparedStatement = connexion.prepareStatement("INSERT INTO user(username, password, couleur_agent) VALUE(?,?,?)", Statement.RETURN_GENERATED_KEYS);
 	        preparedStatement.setString(1, username);
 	        preparedStatement.setString(2, encrypt(password));
+	        preparedStatement.setString(3, color_agent);
 	        
 			int statut = preparedStatement.executeUpdate();
 			
@@ -96,5 +98,35 @@ public class UserDaoImpl implements UserDao {
           byte[] hash = digest.digest(data.getBytes(StandardCharsets.UTF_8));	    
     	  return Base64.getEncoder().encodeToString(hash);
     }
+
+	@Override
+	public void updateColorAgent(User user,  String color) throws Exception{
+		Connection connexion = null;
+		PreparedStatement  preparedStatement = null;
+		
+		int id = user.getId();
+			
+		try 
+		{		        
+			connexion = daoFactory.getConnection();
+			
+	        preparedStatement = connexion.prepareStatement("UPDATE user SET couleur_agent = ? where id = ?");
+	        preparedStatement.setString(1, color);
+	        preparedStatement.setInt(2, id);
+	        
+			int statut = preparedStatement.executeUpdate();
+			
+			if(statut == 0)
+			{
+				throw new Exception();
+			}		
+			user.setCouleur_agent(color);
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			  connexion.close();
+		}	
+	}
     
 }

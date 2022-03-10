@@ -6,7 +6,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import com.bomberman.api.services.GameService;
+import com.bomberman.services.GameService;
 import com.bomberman.beans.Game;
 
 public class GameController extends HttpServlet {

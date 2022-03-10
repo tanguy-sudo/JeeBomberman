@@ -1,4 +1,4 @@
-package com.bomberman.api.services;
+package com.bomberman.services;
 
 import java.sql.Timestamp;
 import com.bomberman.beans.Game;

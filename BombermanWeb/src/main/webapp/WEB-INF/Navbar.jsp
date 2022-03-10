@@ -6,11 +6,10 @@
 		aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
-	<div class="collapse navbar-collapse justify-content-center"
-		id="navbarNav">
+	<div class="collapse navbar-collapse justify-content-center" id="navbarNav">
 		<ul class="navbar-nav">
-			<a class="navbar-brand" href="${pageContext.request.contextPath}">Accueil</a>
-			<li class="nav-item active"><a class="nav-link" href="${pageContext.request.contextPath}/Store">Store <span class="sr-only"></span></a></li>
+			<li class="nav-item active"><a class="nav-link" href="${pageContext.request.contextPath}/home">Home<span class="sr-only"></span></a></li>
+			<li class="nav-item active"><a class="nav-link" href="${pageContext.request.contextPath}/Store">Store<span class="sr-only"></span></a></li>
 		</ul>
 	</div>
 	<div class="navbar-nav ms-auto">

@@ -27,6 +27,7 @@ public final class SignUpForm {
 
         user.setUsername(username);
         user.setPassword(password);
+        user.setCouleur_agent("DEFAULT");
         
         DAOFactory daoFactory = DAOFactory.getInstance();
     	UserDao userDao = daoFactory.getUserDao();

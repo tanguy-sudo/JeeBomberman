@@ -1,4 +1,4 @@
-package com.bomberman.api.services;
+package com.bomberman.services;
 
 import org.json.JSONObject;
 import com.bomberman.beans.Play;
