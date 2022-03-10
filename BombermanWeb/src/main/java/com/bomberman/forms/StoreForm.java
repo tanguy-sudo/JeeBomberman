@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpSession;
 
 public class StoreForm {
 	
-    public User UpdateColorAgent(HttpServletRequest request ) {
+    public User UpdateColorAgent(HttpServletRequest request) {
     	
         String color = request.getParameter("flexRadioDefault");
         

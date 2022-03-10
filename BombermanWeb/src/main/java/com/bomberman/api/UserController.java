@@ -7,6 +7,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Objects;
+
 import org.json.JSONObject;
 import com.bomberman.beans.User;
 import com.bomberman.services.UserService;
@@ -30,7 +32,7 @@ public class UserController extends HttpServlet {
 		User user = userService.connectUser(json);
         
         PrintWriter output = new PrintWriter(response.getOutputStream(), true);
-        if(user != null) { 
+        if(Objects.nonNull(user)) { 
         	System.out.println("success, user connected");	
             output.println("{ status : 201, couleur_agent : " + user.getCouleur_agent() + " }");	
         } else {

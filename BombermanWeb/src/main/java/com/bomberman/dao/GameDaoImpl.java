@@ -38,7 +38,7 @@ public class GameDaoImpl implements GameDao{
 				throw new Exception();
 			}
 			valeursAutoGenerees = preparedStatement.getGeneratedKeys();
-			if(valeursAutoGenerees.next() )
+			if(valeursAutoGenerees.next())
 			{
 				game.setId(valeursAutoGenerees.getInt(1));
 			}

@@ -1,5 +1,7 @@
 package com.bomberman.services;
 
+import java.util.Objects;
+
 import org.json.JSONObject;
 
 import com.bomberman.beans.User;
@@ -17,7 +19,7 @@ public class UserService {
         String username = json.getString("username");
         String password = json.getString("password");
         
-        if(username == null || password == null) {
+        if(Objects.isNull(username) || Objects.isNull(password)) {
         	return null;
         }
         
@@ -31,7 +33,7 @@ public class UserService {
 			e.printStackTrace();
 		}
 		
-        if(user == null)
+        if(Objects.isNull(user))
         	return null;
         else 
         	return user;

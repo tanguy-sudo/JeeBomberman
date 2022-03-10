@@ -24,8 +24,10 @@ public class StoreServlet extends HttpServlet {
 		User user = (User) session.getAttribute("userSession");
 		if(Objects.nonNull(user)) {
 			request.setAttribute("color_agent", user.getCouleur_agent());
+			this.getServletContext().getRequestDispatcher("/WEB-INF/Store.jsp").forward(request, response);
+		}else {
+			this.getServletContext().getRequestDispatcher("/WEB-INF/SignIn.jsp").forward(request, response);	
 		}
-		this.getServletContext().getRequestDispatcher("/WEB-INF/Store.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

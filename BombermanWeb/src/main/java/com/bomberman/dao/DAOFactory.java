@@ -3,6 +3,7 @@ package com.bomberman.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Objects;
 
 public class DAOFactory {
 	
@@ -19,7 +20,7 @@ public class DAOFactory {
     }
     
     public static DAOFactory getInstance() {
-    	if(instance == null) {
+    	if(Objects.isNull(instance)) {
 	
 	        try {
 	        	 Class.forName("com.mysql.jdbc.Driver");

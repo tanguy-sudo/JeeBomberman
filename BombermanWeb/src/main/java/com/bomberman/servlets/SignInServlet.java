@@ -7,9 +7,13 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.Objects;
 
+import com.bomberman.beans.Play;
 import com.bomberman.beans.User;
 import com.bomberman.forms.SignInForm;
+import com.bomberman.services.PlayService;
 
 public class SignInServlet extends HttpServlet {
 	
@@ -22,8 +26,8 @@ public class SignInServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("userSession");
-		if(user != null) {
-			this.getServletContext().getRequestDispatcher("/WEB-INF/Accueil.jsp").forward(request, response);
+		if(Objects.nonNull(user)) {
+			this.getServletContext().getRequestDispatcher("/WEB-INF/Home.jsp").forward(request, response);
 		} else {
 			this.getServletContext().getRequestDispatcher("/WEB-INF/SignIn.jsp").forward(request, response);	
 		}
@@ -37,8 +41,12 @@ public class SignInServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.setAttribute("userSession", user);
 
-		if(user != null) {
-			this.getServletContext().getRequestDispatcher("/WEB-INF/Accueil.jsp").forward(request, response);					
+		if(Objects.nonNull(user)) {
+			PlayService playService = new PlayService();
+			List<Play> plays = playService.getPlay(request);
+			
+			request.setAttribute("plays", plays);
+			this.getServletContext().getRequestDispatcher("/WEB-INF/Home.jsp").forward(request, response);					
 		} else {
 			Boolean errorConnect = true;
 			request.setAttribute("errorConnect", errorConnect);

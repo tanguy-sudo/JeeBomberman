@@ -1,5 +1,7 @@
 package com.bomberman.forms;
 
+import java.util.Objects;
+
 import com.bomberman.beans.User;
 import com.bomberman.dao.DAOFactory;
 import com.bomberman.dao.UserDao;
@@ -14,7 +16,7 @@ public final class SignUpForm {
         String password = request.getParameter("password");
         String verifpassword = request.getParameter("verifpassword");
         
-        if(username == null || password == null) {
+        if(Objects.isNull(username) || Objects.isNull(password)) {
         	return null;
         }
         

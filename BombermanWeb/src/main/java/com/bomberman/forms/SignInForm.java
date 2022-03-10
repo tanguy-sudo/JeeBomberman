@@ -1,5 +1,7 @@
 package com.bomberman.forms;
 
+import java.util.Objects;
+
 import com.bomberman.beans.User;
 import com.bomberman.dao.DAOFactory;
 import com.bomberman.dao.UserDao;
@@ -13,7 +15,7 @@ public final class SignInForm {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         
-        if(username == null || password == null) {
+        if(Objects.isNull(username) || Objects.isNull(password)) {
         	return null;
         }
         
@@ -27,7 +29,7 @@ public final class SignInForm {
 			e.printStackTrace();
 		}
 		
-        if(user == null)
+        if(Objects.isNull(user))
         	return null;
         else 
         	return user;

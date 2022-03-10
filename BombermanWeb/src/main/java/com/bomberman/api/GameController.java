@@ -6,6 +6,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Objects;
+
 import com.bomberman.services.GameService;
 import com.bomberman.beans.Game;
 
@@ -25,7 +27,7 @@ public class GameController extends HttpServlet {
 		Game game = gameService.createGame();
         
         PrintWriter output = new PrintWriter(response.getOutputStream(), true);
-        if(game != null) { 
+        if(Objects.nonNull(game)) { 
         	System.out.println("success, game added");	
             output.println("{ status : 201, id_game : " + game.getId() + " }");	
         } else {
