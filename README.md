@@ -15,7 +15,7 @@ Liste des technologies utilisées dans le projet :
 * [JAVA SE](https://www.oracle.com/java/technologies/javase/jdk16-archive-downloads.html) Version 16
 * [Eclipse](https://www.eclipse.org/downloads/packages/release/kepler/sr2/eclipse-ide-java-ee-developers)
 * [tomcat](https://tomcat.apache.org/tomcat-10.0-doc/index.html) Version 10.0
-* [bootstrap](https://getbootstrap.com/docs/5.1/getting-started/introduction/] Version 5.1
+* [bootstrap](https://getbootstrap.com/docs/5.1/getting-started/introduction/]) Version 5.1
 
 ## Installation
 ***
