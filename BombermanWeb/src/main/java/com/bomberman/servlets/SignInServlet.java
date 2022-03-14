@@ -46,6 +46,7 @@ public class SignInServlet extends HttpServlet {
 			List<Play> plays = playService.getPlay(request);
 			
 			request.setAttribute("plays", plays);
+			request.setAttribute("size", plays.size());
 			this.getServletContext().getRequestDispatcher("/WEB-INF/Home.jsp").forward(request, response);					
 		} else {
 			Boolean errorConnect = true;

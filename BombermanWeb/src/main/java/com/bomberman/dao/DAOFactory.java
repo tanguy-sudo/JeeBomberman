@@ -28,7 +28,7 @@ public class DAOFactory {
 	            System.out.println(e.getMessage());
 	        }
 	        
-	        instance = new DAOFactory("jdbc:mysql://localhost:3306/bombermanBdd", "root", "");
+	        instance = new DAOFactory("jdbc:mysql://localhost:3306/bombermanbdd", "tanguy", "tanguy");
     	}
 
         return instance;

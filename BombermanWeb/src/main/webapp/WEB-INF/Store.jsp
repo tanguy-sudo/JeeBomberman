@@ -20,7 +20,7 @@
 			  <div class="row">
 				  <div class="col-md-4">
 		              <div class="card mb-4 box-shadow">
-		                <img class="card-img-top" style="height: 225px; width: 100%; display: block; background-color: red">	                
+		                <img class="card-img-top" style="height: 225px; width: 100%; display: block;" src="images/RedAgent.png">	                
 		                <div class="card-body">
 		                	<h5 class="card-title">Red color</h5>
 		                  <p class="card-text">
@@ -41,7 +41,7 @@
 		            </div>
 		          <div class="col-md-4">
 		              <div class="card mb-4 box-shadow">
-		                <img class="card-img-top" style="height: 225px; width: 100%; display: block; background-color: blue">	                
+		                <img class="card-img-top" style="height: 225px; width: 100%; display: block;" src="images/BlueAgent.png">	                
 		                <div class="card-body">
 		                	<h5 class="card-title">Blue color</h5>
 		                  <p class="card-text">
@@ -62,7 +62,7 @@
 		            </div>
 		           <div class="col-md-4">
 		              <div class="card mb-4 box-shadow">
-		                <img class="card-img-top" style="height: 225px; width: 100%; display: block; background-color: green">	                
+		                <img class="card-img-top" style="height: 225px; width: 100%; display: block;" src="images/GreenAgent.png">	                
 		                <div class="card-body">
 		                	<h5 class="card-title">Green color</h5>
 		                  <p class="card-text">
@@ -83,7 +83,7 @@
 		            </div>
 		           <div class="col-md-4">
 		              <div class="card mb-4 box-shadow">
-		                <img class="card-img-top" style="height: 225px; width: 100%; display: block; background-color: yellow">	                
+		                <img class="card-img-top" style="height: 225px; width: 100%; display: block;" src="images/YellowAgent.png">	                
 		                <div class="card-body">
 		                	<h5 class="card-title">Yellow color</h5>
 		                  <p class="card-text">
@@ -104,7 +104,7 @@
 		            </div>
 		           <div class="col-md-4">
 		              <div class="card mb-4 box-shadow">
-		                <img class="card-img-top" style="height: 225px; width: 100%; display: block; background-color: white">	                
+		                <img class="card-img-top" style="height: 225px; width: 100%; display: block;" src="images/WhiteAgent.png">	                
 		                <div class="card-body">
 		                	<h5 class="card-title">White color</h5>
 		                  <p class="card-text">
@@ -125,7 +125,7 @@
 		            </div>
 		           <div class="col-md-4">
 		              <div class="card mb-4 box-shadow">
-		                <img class="card-img-top" style="height: 225px; width: 100%; display: block;">	                
+		                <img class="card-img-top" style="height: 225px; width: 100%; display: block;" src="images/DefaultAgent.png">	                
 		                <div class="card-body">
 		                	<h5 class="card-title">Default color</h5>
 		                  <p class="card-text">

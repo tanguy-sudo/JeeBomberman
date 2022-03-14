@@ -69,7 +69,7 @@
 								<div>
 									<p class="mb-0">
 										Do have an account? <a
-											href="${pageContext.request.contextPath}/SignIp"
+											href="${pageContext.request.contextPath}/SignIn"
 											class="text-blue-50 fw-bold">Sign In</a>
 									</p>
 								</div>

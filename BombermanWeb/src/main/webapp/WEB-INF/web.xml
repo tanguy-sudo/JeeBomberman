@@ -17,7 +17,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>SignInServlet</servlet-name>
-    <url-pattern>/</url-pattern>
+    <url-pattern>/SignIn</url-pattern>
   </servlet-mapping>
   <jsp-config>
     <jsp-property-group>
@@ -85,10 +85,6 @@
     <servlet-name>StoreServlet</servlet-name>
     <url-pattern>/Store</url-pattern>
   </servlet-mapping>
-  <mime-mapping>
-    <extension>css</extension>
-    <mime-type>text/css</mime-type>
-  </mime-mapping>
   <servlet>
     <description></description>
     <display-name>HomeServlet</display-name>
