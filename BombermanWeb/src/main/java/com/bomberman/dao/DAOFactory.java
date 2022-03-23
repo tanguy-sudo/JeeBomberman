@@ -4,7 +4,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Objects;
-
+/**
+ * Gestion de la connexion à la base de données
+ * @author tanguy
+ *
+ */
 public class DAOFactory {
 	
     private static DAOFactory instance = null;
@@ -18,7 +22,10 @@ public class DAOFactory {
         this.username = username;
         this.password = password;
     }
-    
+    /**
+     * Permet de créer une unique instance
+     * @return DAOFactory
+     */
     public static DAOFactory getInstance() {
     	if(Objects.isNull(instance)) {
 	
@@ -35,6 +42,11 @@ public class DAOFactory {
     }
     
 
+    /**
+     * Retourne une connexion sur la base de données
+     * @return Connection
+     * @throws SQLException
+     */
 	Connection getConnection() throws SQLException {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");

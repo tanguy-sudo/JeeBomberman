@@ -14,7 +14,11 @@ import com.bomberman.beans.Play;
 import com.bomberman.beans.User;
 import com.bomberman.forms.SignUpForm;
 import com.bomberman.services.PlayService;
-
+/**
+ * Gestion de la page SignUp
+ * @author tanguy
+ *
+ */
 public class SignUpServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
@@ -23,9 +27,13 @@ public class SignUpServlet extends HttpServlet {
         super();
     }
 
+    /**
+     * Gestion de la requête GET
+     */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("userSession");
+		// Redirection vers la page Home si l'utilisateur existe
 		if(Objects.nonNull(user)) {
 			this.getServletContext().getRequestDispatcher("/WEB-INF/Home.jsp").forward(request, response);
 		} else {
@@ -34,8 +42,12 @@ public class SignUpServlet extends HttpServlet {
 
 	}
 
+	/**
+	 * Gestion de la page POST
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		SignUpForm signupform  = new SignUpForm();
+		// Création d'un utilisateur
 		User user = signupform.createUser(request);
 		
 		HttpSession session = request.getSession();
@@ -43,6 +55,7 @@ public class SignUpServlet extends HttpServlet {
 
 		if(Objects.nonNull(user)) {
 			PlayService playService = new PlayService();
+			// Récupération de ses parties(vide, car vient juste d'être crée)
 			List<Play> plays = playService.getPlay(request);
 			
 			request.setAttribute("plays", plays);

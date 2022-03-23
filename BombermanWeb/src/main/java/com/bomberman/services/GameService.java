@@ -11,6 +11,9 @@ public class GameService {
 		
 	}
 	
+	/*
+	 * Crée une Game
+	 */
     public Game createGame() {   	
         
         DAOFactory daoFactory = DAOFactory.getInstance();

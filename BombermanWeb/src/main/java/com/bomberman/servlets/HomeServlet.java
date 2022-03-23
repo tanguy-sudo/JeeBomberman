@@ -14,6 +14,11 @@ import com.bomberman.beans.Play;
 import com.bomberman.beans.User;
 import com.bomberman.services.PlayService;
 
+/**
+ * Gestion de la page Home
+ * @author tanguy
+ *
+ */
 public class HomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -21,11 +26,17 @@ public class HomeServlet extends HttpServlet {
         super();
     }
 
+    /**
+     * Gestion de la requête GET
+     * Regarde si une session existe avant de le rediriger vers la page Home
+     */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("userSession");
+		// Regarde si une session existe
 		if(Objects.nonNull(user)) {
 			PlayService playService = new PlayService();
+			// Récupère sa liste de partie jouée
 			List<Play> plays = playService.getPlay(request);
 			
 			request.setAttribute("plays", plays);

@@ -18,6 +18,11 @@ public class PlayService {
 		
 	}
 	
+	/**
+	 * Créer une play
+	 * @param json
+	 * @return PLay
+	 */
     public Play createPlay(JSONObject json) {   	      
         DAOFactory daoFactory = DAOFactory.getInstance();
         PlayDao playDao = daoFactory.getPlayDao();
@@ -44,6 +49,11 @@ public class PlayService {
 		}
     }
     
+   /**
+    * Créer une liste de play du joueur
+    * @param request
+    * @return List<Play>
+    */
    public List<Play> getPlay(HttpServletRequest request) {     
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("userSession");

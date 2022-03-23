@@ -1,5 +1,9 @@
 package com.bomberman.beans;
-
+/**
+ * Réprésentaion d'un objet Play
+ * @author tanguy
+ *
+ */
 public class Play {
 	
 	private int id;

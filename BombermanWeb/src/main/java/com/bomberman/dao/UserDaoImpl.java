@@ -9,7 +9,11 @@ import java.util.Base64;
 import java.security.MessageDigest;
 import java.nio.charset.StandardCharsets;
 import com.bomberman.beans.User;
-
+/**
+ * Gestion des requêtes sur la table USER en base de données
+ * @author tanguy
+ *
+ */
 public class UserDaoImpl implements UserDao {
 	
 	private DAOFactory daoFactory;
@@ -18,6 +22,9 @@ public class UserDaoImpl implements UserDao {
 		this.daoFactory = daoFactory;
 	}
 
+	/**
+	 * Retourne un utilisateur stocké en base de données s'il existe
+	 */
 	@Override
 	public User find(String username, String password) throws Exception {
 		Connection connexion = null;
@@ -30,10 +37,12 @@ public class UserDaoImpl implements UserDao {
 	        
 	        preparedStatement = connexion.prepareStatement("SELECT id, username, password, couleur_agent FROM user WHERE username = ? AND password = ? ", Statement.RETURN_GENERATED_KEYS);
 	        preparedStatement.setString(1, username);
+	        // Chiffre le mot de passe
 	        preparedStatement.setString(2, encrypt(password));
 	        
 	        resultSet = preparedStatement.executeQuery();
 	        
+	        // Création d'un objet user
 	        if (resultSet.next()) {
 	        	user = new User();
 	        	user.setId(resultSet.getInt("id"));
@@ -51,6 +60,9 @@ public class UserDaoImpl implements UserDao {
 		return user;
 	}
 
+	/**
+	 * Crée un utilisateur
+	 */
 	@Override
 	public void create(User user) throws Exception {
 		Connection connexion = null;
@@ -67,6 +79,7 @@ public class UserDaoImpl implements UserDao {
 			
 	        preparedStatement = connexion.prepareStatement("INSERT INTO user(username, password, couleur_agent) VALUE(?,?,?)", Statement.RETURN_GENERATED_KEYS);
 	        preparedStatement.setString(1, username);
+	        // Chiffre le mot de passe
 	        preparedStatement.setString(2, encrypt(password));
 	        preparedStatement.setString(3, color_agent);
 	        
@@ -79,6 +92,7 @@ public class UserDaoImpl implements UserDao {
 			valeursAutoGenerees = preparedStatement.getGeneratedKeys();
 			if(valeursAutoGenerees.next() )
 			{
+				// Mets à jour l'id de l'utilisateur
 				user.setId(valeursAutoGenerees.getInt(1));
 			}
 			else
@@ -93,12 +107,21 @@ public class UserDaoImpl implements UserDao {
 		}
 	}
     
+	/**
+	 * Chiffre le mot de passe
+	 * @param data
+	 * @return un mot de passe chiffré
+	 * @throws Exception
+	 */
     private String encrypt(String data) throws Exception{
     	  MessageDigest digest = MessageDigest.getInstance("SHA-256");
           byte[] hash = digest.digest(data.getBytes(StandardCharsets.UTF_8));	    
     	  return Base64.getEncoder().encodeToString(hash);
     }
 
+    /**
+     * Mets à jour la couleur de l'agent d'un utilisateur en base de données
+     */
 	@Override
 	public void updateColorAgent(User user,  String color) throws Exception{
 		Connection connexion = null;
@@ -114,6 +137,7 @@ public class UserDaoImpl implements UserDao {
 	        preparedStatement.setString(1, color);
 	        preparedStatement.setInt(2, id);
 	        
+	        // Exécute la requête
 			int statut = preparedStatement.executeUpdate();
 			
 			if(statut == 0)

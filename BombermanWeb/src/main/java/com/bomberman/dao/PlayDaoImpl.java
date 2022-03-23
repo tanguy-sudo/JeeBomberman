@@ -9,7 +9,11 @@ import java.util.List;
 
 import com.bomberman.beans.Play;
 import com.bomberman.beans.User;
-
+/**
+ * Gestion des requêtes sur la table PLAY en base de données
+ * @author tanguy
+ *
+ */
 public class PlayDaoImpl implements PlayDao{
 	
 	private DAOFactory daoFactory;	
@@ -18,6 +22,9 @@ public class PlayDaoImpl implements PlayDao{
 		this.daoFactory = daoFactory;
 	}
 
+	/**
+	 * Crée une play en base de données
+	 */
 	@Override
 	public void create(Play play) throws Exception {
 		Connection connexion = null;
@@ -37,6 +44,7 @@ public class PlayDaoImpl implements PlayDao{
 	        preparedStatement.setInt(2, id_game);
 	        preparedStatement.setInt(3, id_user);
 	        
+	        // Exécute la requête
 			int statut = preparedStatement.executeUpdate();
 			
 			if(statut == 0)
@@ -46,6 +54,7 @@ public class PlayDaoImpl implements PlayDao{
 			valeursAutoGenerees = preparedStatement.getGeneratedKeys();
 			if(valeursAutoGenerees.next())
 			{
+				//Mets à jour id de la play
 				play.setId(valeursAutoGenerees.getInt(1));
 			}
 			else
@@ -60,6 +69,9 @@ public class PlayDaoImpl implements PlayDao{
 		}	
 	}
 
+	/**
+	 * Retourne la liste des play d'un utilisateur
+	 */
 	@Override
 	public List<Play> findAll(User user) throws Exception {
 		Connection connexion = null;
@@ -76,8 +88,10 @@ public class PlayDaoImpl implements PlayDao{
 	        preparedStatement = connexion.prepareStatement("SELECT id, results, id_game, id_user FROM play WHERE id_user = ?", Statement.RETURN_GENERATED_KEYS);
 	        preparedStatement.setInt(1, id_user);
 	        
+	        // Exécute la requête
 	        resultSet = preparedStatement.executeQuery();
 			
+	        // Parcours les résultats et créer une liste contenant c'est résultat(play)
 			plays = new ArrayList<Play>();
 			while(resultSet.next())
 			{

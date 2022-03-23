@@ -7,9 +7,17 @@ import com.bomberman.dao.DAOFactory;
 import com.bomberman.dao.UserDao;
 
 import jakarta.servlet.http.HttpServletRequest;
-
+/**
+ * Gestion des formulaires de la page SignUp
+ * @author tanguy
+ *
+ */
 public final class SignUpForm {
-	
+	/**
+	 * Essaye de créer un utilisateur en base de données
+	 * @param request
+	 * @return user
+	 */
     public User createUser(HttpServletRequest request) {
     	
         String username = request.getParameter("username");
@@ -20,6 +28,7 @@ public final class SignUpForm {
         	return null;
         }
         
+        // Vérifie que password et verifpassword sont égaux
         if(!password.equals(verifpassword)) {
         	return null;
         }
@@ -35,6 +44,7 @@ public final class SignUpForm {
     	UserDao userDao = daoFactory.getUserDao();
     	
     	try {
+    		// Création d'un utilisateur
 			userDao.create(user);
 		} catch (Exception e) {
 			e.printStackTrace();

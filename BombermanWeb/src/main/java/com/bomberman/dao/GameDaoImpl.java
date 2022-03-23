@@ -7,7 +7,11 @@ import java.sql.Statement;
 import java.sql.Timestamp;
 
 import com.bomberman.beans.Game;
-
+/**
+ * Gestion des requêtes sur la table GAME en base de données
+ * @author tanguy
+ *
+ */
 public class GameDaoImpl implements GameDao{
 	
 	private DAOFactory daoFactory;	
@@ -16,6 +20,9 @@ public class GameDaoImpl implements GameDao{
 		this.daoFactory = daoFactory;
 	}
 
+	/**
+	 * Crée une GAME en base de données
+	 */
 	@Override
 	public void create(Game game) throws Exception {
 		Connection connexion = null;
@@ -40,6 +47,7 @@ public class GameDaoImpl implements GameDao{
 			valeursAutoGenerees = preparedStatement.getGeneratedKeys();
 			if(valeursAutoGenerees.next())
 			{
+				// Mets à jour id de la game
 				game.setId(valeursAutoGenerees.getInt(1));
 			}
 			else

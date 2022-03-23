@@ -1,7 +1,11 @@
 package com.bomberman.beans;
 
 import java.sql.Timestamp;
-
+/**
+ * Réprésentation de objet GAME
+ * @author tanguy
+ *
+ */
 public class Game {
 	
 	private int id;

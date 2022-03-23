@@ -14,6 +14,11 @@ public class UserService {
 		
 	}
 	
+	/**
+	 * Test si le login et le password correspondent à un utilisateur
+	 * @param json
+	 * @return User
+	 */
     public User connectUser(JSONObject json) {  
     	
         String username = json.getString("username");

@@ -1,5 +1,10 @@
 package com.bomberman.beans;
 
+/**
+ * Réprésentation d'un objet User
+ * @author tanguy
+ *
+ */
 public class User {
 	
 	private int id;
@@ -10,11 +15,6 @@ public class User {
 	public User() {
 		
 	}
-
-    public User(String username,String password) {
-        this.username = username;
-        this.password = password;
-    }
 
 	public int getId() {
 		return id;
