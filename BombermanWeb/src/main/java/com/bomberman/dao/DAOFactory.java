@@ -1,9 +1,11 @@
 package com.bomberman.dao;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Objects;
+import java.util.Properties;
 /**
  * Gestion de la connexion à la base de données
  * @author tanguy
@@ -34,8 +36,19 @@ public class DAOFactory {
 	        } catch (ClassNotFoundException e) {
 	            System.out.println(e.getMessage());
 	        }
-	        
-	        instance = new DAOFactory("jdbc:mysql://localhost:3306/bombermanbdd", "tanguy", "tanguy");
+	        Properties pros = new Properties();
+	        try {
+				pros.load(DAOFactory.class.getClassLoader().getResourceAsStream("/config.properties"));
+		        String serveur = pros.getProperty("serveur");
+		        String numeroserveur = pros.getProperty("port");
+		        String bddname = pros.getProperty("bddname");
+		        String bdduser = pros.getProperty("bdduser");
+		        String bddmdp = pros.getProperty("bddmdp");
+		        instance = new DAOFactory("jdbc:mysql://" + serveur +":" + numeroserveur +"/" + bddname, bdduser, bddmdp);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
     	}
 
         return instance;
