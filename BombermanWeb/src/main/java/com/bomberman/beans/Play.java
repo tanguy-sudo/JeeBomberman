@@ -1,7 +1,7 @@
 package com.bomberman.beans;
 /**
  * Réprésentaion d'un objet Play
- * @author tanguy
+ * @author tanguy guillaume
  *
  */
 public class Play {

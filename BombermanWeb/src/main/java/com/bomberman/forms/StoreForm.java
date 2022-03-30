@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 /**
  * Gestion des formulaires de la page Store
- * @author tanguy
+ * @author tanguy guillaume
  *
  */
 public class StoreForm {

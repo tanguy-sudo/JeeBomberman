@@ -8,7 +8,7 @@ import java.util.Objects;
 import java.util.Properties;
 /**
  * Gestion de la connexion à la base de données
- * @author tanguy
+ * @author tanguy guillaume
  *
  */
 public class DAOFactory {

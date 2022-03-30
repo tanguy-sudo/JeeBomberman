@@ -15,7 +15,7 @@ import com.bomberman.services.UserService;
 
 /**
  * API qui gère les requêtes "/user/ que ce soit POST ou GET 
- * @author tanguy
+ * @author tanguy guillaume
  *
  */
 public class UserController extends HttpServlet {
@@ -33,8 +33,8 @@ public class UserController extends HttpServlet {
 	 * Gestion de la requête POST sur "/user
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        BufferedReader reader = request.getReader();
         // Récupération des informations que le client envoie(login, password)
+		BufferedReader reader = request.getReader();
         JSONObject json = new JSONObject(reader.readLine());
         
         UserService userService = new UserService();	

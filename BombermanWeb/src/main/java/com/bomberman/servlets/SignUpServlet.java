@@ -16,7 +16,7 @@ import com.bomberman.forms.SignUpForm;
 import com.bomberman.services.PlayService;
 /**
  * Gestion de la page SignUp
- * @author tanguy
+ * @author tanguy guillaume
  *
  */
 public class SignUpServlet extends HttpServlet {

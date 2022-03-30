@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 /**
  * Gestion de la page SignOut(Déconnexion)
- * @author tanguy
+ * @author tanguy guillaume
  *
  */
 public class SignOutServlet extends HttpServlet {

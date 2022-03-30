@@ -11,7 +11,7 @@ import java.nio.charset.StandardCharsets;
 import com.bomberman.beans.User;
 /**
  * Gestion des requêtes sur la table USER en base de données
- * @author tanguy
+ * @author tanguy guillaume
  *
  */
 public class UserDaoImpl implements UserDao {

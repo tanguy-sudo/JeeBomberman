@@ -13,7 +13,7 @@ import com.bomberman.beans.Game;
 
 /**
  * API qui gère les requêtes "/game/ que ce soit POST ou GET  
- * @author tanguy
+ * @author tanguy guillaume
  *
  */
 public class GameController extends HttpServlet {

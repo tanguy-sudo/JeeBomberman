@@ -9,7 +9,7 @@ import com.bomberman.dao.UserDao;
 import jakarta.servlet.http.HttpServletRequest;
 /**
  * Gestion des formulaires de la page SignIn
- * @author tanguy
+ * @author tanguy guillaume
  *
  */
 public final class SignInForm {

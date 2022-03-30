@@ -2,7 +2,7 @@ package com.bomberman.beans;
 
 /**
  * Réprésentation d'un objet User
- * @author tanguy
+ * @author tanguy guillaume
  *
  */
 public class User {

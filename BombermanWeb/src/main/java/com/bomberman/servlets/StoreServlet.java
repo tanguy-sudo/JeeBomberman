@@ -14,7 +14,7 @@ import com.bomberman.forms.StoreForm;
 
 /**
  * Gestion de la page Store
- * @author tanguy
+ * @author tanguy guillaume
  *
  */
 public class StoreServlet extends HttpServlet {

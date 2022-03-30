@@ -16,7 +16,7 @@ import com.bomberman.services.PlayService;
 
 /**
  * Gestion de la page Home
- * @author tanguy
+ * @author tanguy guillaume
  *
  */
 public class HomeServlet extends HttpServlet {

@@ -3,7 +3,7 @@ package com.bomberman.beans;
 import java.sql.Timestamp;
 /**
  * Réprésentation de objet GAME
- * @author tanguy
+ * @author tanguy guillaume
  *
  */
 public class Game {

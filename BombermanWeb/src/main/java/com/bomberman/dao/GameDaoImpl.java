@@ -9,7 +9,7 @@ import java.sql.Timestamp;
 import com.bomberman.beans.Game;
 /**
  * Gestion des requêtes sur la table GAME en base de données
- * @author tanguy
+ * @author tanguy guillaume
  *
  */
 public class GameDaoImpl implements GameDao{

@@ -15,7 +15,7 @@ import com.bomberman.beans.Play;
 
 /**
  * API qui gère les requêtes "/play/ que ce soit POST ou GET 
- * @author tanguy
+ * @author tanguy guillaume
  *
  */
 public class PlayController extends HttpServlet {

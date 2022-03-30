@@ -16,7 +16,7 @@ import com.bomberman.forms.SignInForm;
 import com.bomberman.services.PlayService;
 /**
  * Gestion de la page SingIn
- * @author tanguy
+ * @author tanguy guillaume
  *
  */
 public class SignInServlet extends HttpServlet {

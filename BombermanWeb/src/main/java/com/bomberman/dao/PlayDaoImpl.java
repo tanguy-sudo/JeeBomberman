@@ -11,7 +11,7 @@ import com.bomberman.beans.Play;
 import com.bomberman.beans.User;
 /**
  * Gestion des requêtes sur la table PLAY en base de données
- * @author tanguy
+ * @author tanguy guillaume
  *
  */
 public class PlayDaoImpl implements PlayDao{
